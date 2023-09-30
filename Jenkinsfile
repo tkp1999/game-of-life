@@ -20,6 +20,7 @@ pipeline{
                     url: 'https://github.com/tkp1999/game-of-life.git'
 
             }
+            
         }
         stage('build and package'){
             steps{
