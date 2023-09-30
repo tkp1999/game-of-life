@@ -35,5 +35,19 @@ pipeline{
 
             }
         }
+
+    }
+    post{
+        success{
+            mail subject: 'your project is effective',
+                 body: 'your prokect is effective',
+                 to: 'all@gmail.com'
+        }
+        failure{
+            mail subject: 'your project is defective',
+                 body: 'your prokect is defective',
+                 to: 'all@gmail.com'
+
+        }
     }
 }
