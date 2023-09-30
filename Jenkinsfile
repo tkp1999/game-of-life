@@ -20,11 +20,11 @@ pipeline{
                     url: 'https://github.com/tkp1999/game-of-life.git'
 
             }
-            
+
         }
         stage('build and package'){
             steps{
-                sh script: '/usr/share/maven/apache-maven-3.9.4/bin/mvn clean package'
+                sh script: '/opt/apache-maven-3.9.4/bin/mvn clean package'
 
             }
         }
