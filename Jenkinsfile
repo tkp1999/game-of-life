@@ -13,6 +13,12 @@ pipeline{
         maven 'maven3.9'
         jdk 'JAVA_8'
     }
+    parameters{
+        choice(name: 'GOAL', choices: ['package', 'clean package', 'install', 'clean install'], description: "This is to build gameoflife project")
+    }
+
+ 
+
     stages{
         stage('get code from github'){
             steps{
@@ -24,7 +30,7 @@ pipeline{
         }
         stage('build and package'){
             steps{
-                sh script: '/opt/apache-maven-3.9.4/bin/mvn clean package'
+                sh script: "/opt/apache-maven-3.9.4/bin/mvn ${params.GOAL}"
 
             }
         }
